@@ -5,8 +5,11 @@ import arrow from '../../assets/pictures/arrow.png'
 function Collapse({collapseTitle , collapseDescription}){
     const [isOpen, setIsOpen] = useState(false)
 
+
+
     const handleClick = ()=>{
         setIsOpen(!isOpen)
+
     }
 
     return(
@@ -16,11 +19,14 @@ function Collapse({collapseTitle , collapseDescription}){
                 <img  src = {arrow} className={isOpen ?`${styles.arrow_up}`:`${styles.arrow_down}`}
                 alt='deployer' />
             </div>
-            {isOpen && (
-                <div className={styles.collapse_description}>
-                    <div>{collapseDescription}</div>
+            
+                <div className={styles.collapse_description + " " + (isOpen ?  styles.open: "")}  >
+                    <div >
+                        <div className={styles.inner}>    
+                            {collapseDescription}
+                        </div>
+                    </div>
                 </div>
-            )}
         </div>
     )
 }

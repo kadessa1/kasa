@@ -32,14 +32,29 @@
     font-size: 1.3rem;
     font-weight: 400;
     margin: 0px auto;
-    padding: 36px 27px 19px 18px;
     border-radius:0 0 5px 5px;
     display:flex;
-    justify-content:space-between;
     align-items: center;
     position: relative;
     top: -4px;
+    padding: 0 27px 19px 18px;
+
+
 }
+.collapse_description div.inner{
+    padding-top: 36px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out ;
+    box-sizing: border-box;
+
+
+}
+.collapse_description.open div.inner{
+    max-height: 500px;
+}
+
+
 
 .arrow_up{
     transition:transform 0.3s;

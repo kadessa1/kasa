@@ -2,7 +2,22 @@
     height: 415px;
     position: relative;
     margin: 0;
+    display: flex;
+    overflow-x: hidden;
 }
+
+.carrousel_container img.slide{
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 1.2s ease;
+
+}
+
+.carrousel_container img.slide.visible{
+    display: block;
+}
+
+
 
 .slide {
     width: 100%;
@@ -20,6 +35,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1005;
+}
+
+
+.bullets {
+    position: absolute;
+    z-index: 10005;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 20px;
+
 }
 
 .prev {
